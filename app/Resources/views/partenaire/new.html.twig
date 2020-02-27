@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+<div class="container">
+    <center>
+    <h1>Add a new partner</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn-warning" type="submit" value="Add" />
+    {{ form_end(form) }}
+
+<br>
+<br>
+<br>
+    </center>
+</div>
+{% endblock %}

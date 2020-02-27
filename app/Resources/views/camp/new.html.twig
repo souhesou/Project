@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html.twig' %}
+{% block container %}
+<center>
+    <div class="container">
+
+
+
+    <h1>Create a new camp</h1>
+                <br>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+                <br>
+                <br>
+        <input type="submit" class="btn btn-theme" value="create" />
+    {{ form_end(form) }}
+
+
+                <br>
+                <br>
+                <br>
+
+
+
+        </div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+
+<div class="container">
+
+    <center>
+    <h1>Assign a new donation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-theme" type="submit" value="Assign" />
+    {{ form_end(form) }}
+
+
+{% endblock %}

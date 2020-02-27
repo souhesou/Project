@@ -1,0 +1,45 @@
+{% extends '@FOSMessage/layout.html.twig' %}
+
+{% block fos_message_content %}
+
+
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+            <aside class="mid-side">
+
+            <div class="chat-room-head">
+                <h2><b>{{ thread.subject }}</b></h2>
+</div>
+            </aside>
+        </div>
+    </section>
+</section>
+{% for message in thread.messages %}
+    <div class="messenger_thread_message">
+
+
+
+        <div class="alert alert-info">
+        <div class="messenger_thread_message_body" id="message_{{ message.id }}">
+            <h5>{{ message.body }}</h5>
+
+        </div>
+
+    </div>
+     <h6> {{ message.sender }} at {{ message.createdAt|date }}</h6>
+    </div>
+{% endfor %}
+
+
+
+<form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+    <div class="foo">
+        {{ form_widget(form, {'attr': {'class': 'foo'}}) }}
+    </div>
+    <input class="btn btn-round btn-success" type="submit" value="Send">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+        <h1 class="alert alert-warning"> Vous devez affecter une quantité</h1>
+        <h1 class="alert alert-warning">qui est suppérieure ou égale à celle des besoins </h1>
+
+<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <ul>
+            <li>
+                <a class="btn btn-primary btn-lg btn-block" href="{{ path('besoins_index') }}">Afficher la liste des besoins</a>
+            </li>
+            <br>
+            <br>
+            <br>
+            <br>
+            <li>
+                <a class="btn btn-default btn-lg btn-block" href="{{ path('affectation_new') }}">Ajouter une nouvelle affectation</a>
+
+            </li>
+        </ul>
+
+    </center>
+{% endblock %}

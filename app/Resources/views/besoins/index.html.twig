@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+        <section id="main-content">
+
+
+            <h1>Our Camps needs</h1>
+
+            <table class="table table-striped table-advance table-hover">
+                <hr>
+
+                <thead>
+                <tr>
+                    <th ><span class="badge bg-default">Number</span></th>
+                    <th ><span class="badge bg-default">Location</span></th>
+                    <th> <span class="badge bg-default">Category</span></th>
+                    <th><span class="badge bg-default">Quantity</span></th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for besoin in besoins %}
+
+                    <td> <a href="{{ path('besoins_show', { 'id': besoin.id }) }}">{{ besoin.id }}</a></td>
+                    <td><span class="label label-info label-warning">{{ besoin.id_c.lieu.lieu }}</td>
+                    <td class="hidden-phone"> <span class="label label-success">{{ besoin.nomBs }}</td>
+                    <td ><span class="label label-info label-mini">{{ besoin.quantite }}</td>
+
+
+                        <td>
+
+                                <i class="fa fa-plus"></i> <a href="{{ path('besoins_show', { 'id': besoin.id }) }}">details</a>
+
+
+                                <a class="btn btn-round btn-theme04"  href="{{ path('besoins_edit', { 'id': besoin.id }) }}"><i  class="fa fa-pencil"></i></a>
+
+
+                        </td>
+
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+            <div class="navigation">
+                {{ knp_pagination_render(besoins) }}
+            </div>
+            <ul>
+                <li>
+                    <a class="btn btn-primary btn-lg btn-block" href="{{ path('besoins_new') }}">Create a new need</a>
+                </li>
+                <li>
+                    <a class="btn btn-default btn-lg btn-block" href="{{ path('besoins_pdfall') }}">Import to pdf</a>
+
+                </li>
+            </ul>
+
+
+        </section></center>
+{% endblock %}

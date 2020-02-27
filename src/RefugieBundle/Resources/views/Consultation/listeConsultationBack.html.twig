@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+
+    <br><br><br>
+    <div class="container">
+
+<center><table class="table" id="myTable">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Topic</th>
+        <th>Contents</th>
+        <th>Duration</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for const in consultation %}
+    <tr>
+        <td>{{ const.idref.nom }}</td>
+        <td>{{ const.sujet }}</td>
+        <td>{{ const.contenu }}</td>
+        <td>{{ const.duree |date('g:i') }}</td>
+        <td>{{ const.date |date }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+</center>
+
+<br>
+
+    <div class="col-xs-12" align="right">
+
+        <button class="btn btn-primary btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>      IMPRIMER</button>
+
+        <br>
+    </div>
+    </div>
+{% endblock %}

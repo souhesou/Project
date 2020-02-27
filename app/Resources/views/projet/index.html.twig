@@ -1,0 +1,62 @@
+{% extends 'base_front.html.twig' %}
+
+{% block container %}
+    <style>
+        h1{
+            color:mediumpurple;
+        }
+    </style>
+    <center>
+        <section id="main-content">
+            <h1> Projects </h1>
+
+            <table class="table table-striped table-advance table-hover"  >
+        <thead>
+            <tr>
+                <th>Number/th>
+                <th>Project's name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Number of participants</th>
+
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+        {% for projet in projets %}
+            <tr>
+                <td><a href="{{ path('projet_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
+                <td>{{ projet.nomProjet }}</td>
+                <td>{{ projet.description }}</td>
+                <td>{{ projet.lieu }}</td>
+                <td>{% if projet.date %}{{ projet.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ projet.nombreParticipant }}</td>
+                {% if projet.partenaire !=null %}
+                <td> {{ projet.partenaire.id }}</td>
+                {% else %}
+
+                    {% endif %}
+                <td>
+                    <ul>
+
+                            <a class="btn-primary-white" href="{{ path('projet_show', { 'id': projet.id }) }}">details</a>
+
+                            <a  class="btn-primary-white" href="{{ path('projet_edit', { 'id': projet.id }) }}">edit</a>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+
+            <a class="btn-primary-white" href="{{ path('p_new') }}">Create a new projet</a>
+
+    </ul>
+    </center>
+{% endblock %}

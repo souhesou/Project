@@ -1,0 +1,77 @@
+
+
+{% block container %}
+    <br>
+    <br>
+    <br>
+
+    <center>
+
+        <div class="row mt">
+            <div class="col-md-12">
+
+                <h1> <i class="fa fa-angle-right">Our camps need</i></h1>
+
+                <br>
+                <br>
+                <br>
+                <style>
+                    table tr:nth-child(even) {
+                        background-color: #b0f2b6;
+                    }
+                    th {
+                        background-color: #696969;
+                        color: springgreen;
+                    }
+
+                    h1
+                    {
+                        font-size:300%;
+                        color:forestgreen;
+
+                    }
+
+
+                </style>
+                <table  style="width:100%" class="table table-striped table-advance table-hover">
+                    <thead>
+                    <tr>
+                        <th><h2>Location</h2></th>
+
+
+                        <th><h2>Category</h2></th>
+
+                        <th><h2> Quantity </h2></th>
+
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for besoin in besoins %}
+                        <tr>
+                            <td><h2>{{ besoin.id_c.lieu.lieu }}       </h2></td>
+
+
+                            <td> <h2>{{ besoin.nomBs }}                 </h2></td>
+
+                            <td><h2>{{ besoin.quantite }}</h2></td>
+
+
+
+
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+
+
+    </center>
+
+{% endblock %}

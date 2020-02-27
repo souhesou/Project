@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+
+
+    <div class="container">
+        <center>
+<table id="myTable" class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Age</th>
+            <th>Origin</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for refug in refugie %}
+            <tr id="souhe">
+               <td></td>
+                <td>{{ refug.nom }}</td>
+                <td>{{ refug.prenom }}</td>
+                <td>{{ refug.age }}</td>
+                <td>{{ refug.origine }}</td>
+                <td><a href="{{ path('modifier_BRefugie',{'id':refug.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_BRefugie',{'id':refug.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+
+    <br>
+
+
+
+    </div>
+    <br><br>
+    <script>
+        function search() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#example #souhe").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        }
+    </script>
+</center>
+
+{% endblock %}

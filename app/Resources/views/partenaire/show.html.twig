@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+    <h1>Details about partner</h1>
+
+        <table id="example"class="table">
+     <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Adress</th>
+                <th>Field</th>
+                <th>Type</th>
+     </thead>
+            </tr>
+            <tbody>
+            <tr>
+                <td>{{ partenaire.id }}</td>
+                <td>{{ partenaire.nom }}</td>
+
+                <td>{{ partenaire.adresse }}</td>
+
+                <td>{{ partenaire.domaine }}</td>
+
+
+                <td>{{ partenaire.type }}</td>
+
+
+
+
+    <td>
+
+            <a class="btn-warning"  href="{{ path('partenaire_edit', { 'id': partenaire.id }) }}">Edit</a>
+
+        {{ form_start(delete_form) }}
+        <br><input class="btn-danger" type="submit" value="Delete">
+         {{ form_end(delete_form) }}</td></tr>
+        </tbody> </table>
+
+            <br>
+
+
+            <br>
+            <h3><a href="{{ path('partenaire_index') }}">Back to the list</a></h3>
+
+        </ul>
+
+
+
+    </center>
+{% endblock %}

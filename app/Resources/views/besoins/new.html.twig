@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+
+    <div class="container">
+
+            <center>
+
+            <h1>Create a new camp's need</h1>
+            <br>
+    {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+            <br>
+        <input class="btn btn-theme" type="submit" value="create" />
+    {{ form_end(form) }}
+
+
+
+        <br>
+        <br>
+
+            </center></div>
+    </center>
+
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+
+            if (x == "") {
+                alert("le nom ne doit pas être vide");
+                return false;
+            }
+
+
+        }
+    </script>
+{% endblock %}

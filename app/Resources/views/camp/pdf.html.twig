@@ -1,0 +1,90 @@
+
+
+{% block container %}
+
+<div class="row mt">
+    <div class="col-md-12">
+
+        <br>
+        <br>
+        <br>
+        <style>
+
+
+            h1
+            {
+                font-size:250%;
+                color:black;
+
+            }
+            h2
+            {
+                font-size:200%;
+                color:grey;
+
+            }
+            h3
+            {
+                font-size:200%;
+                color:grey;
+
+            }
+            table tr:nth-child(even) {
+                background-color:black;
+            }
+            th {
+                background-color: black;
+                color: grey;
+            }
+
+        </style>
+
+
+
+        <h1>Location of the camp <h2> {{ camp.lieu.lieu }}</h2></h1>
+
+
+        <h1>Maximum capacity of refugees : <h2>{{ camp.capacite }}</h2> </h1>
+        <h1>list of the camp's needs :</h1>
+        <table  style="width:100%" class="table table-striped table-advance table-hover">
+            <thead>
+            <tr>
+                <th><h2>Category</h2></th>
+
+
+                <th><h2>Quantity</h2></th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for besoins in besoins %}
+
+                <td> <h3>{{ besoins.nomBs }}</h3></td>
+
+                <td>  <h3>{{ besoins.quantite }}</h3></td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+        <div style="margin-top: 20px; width: 200px; margin-left: 500px">
+
+            <img   src="{{ absolute_url(asset('img/maddox.png') )}}" id="imgEvent">
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% endblock %}
+    </div></div>
